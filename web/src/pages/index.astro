@@ -1,0 +1,180 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout>
+  <!-- TopNavBar -->
+  <nav class="fixed top-0 w-full z-50 glass-nav shadow-[0_40px_40px_rgba(4,7,10,0.06)]">
+    <div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
+      <a class="text-2xl font-black tracking-tighter text-[#dce3ea] hover:text-[#c2dc99] transition-colors font-headline" href="/">
+        Echo Driver
+      </a>
+      <div class="hidden md:flex gap-10 items-center">
+        <a class="font-headline tracking-tighter uppercase font-bold text-sm text-[#dce3ea]/60 hover:text-[#dce3ea] transition-all" href="#">Projects</a>
+        <a class="font-headline tracking-tighter uppercase font-bold text-sm text-[#dce3ea]/60 hover:text-[#dce3ea] transition-all" href="#">Plugins</a>
+        <a class="font-headline tracking-tighter uppercase font-bold text-sm text-[#dce3ea]/60 hover:text-[#dce3ea] transition-all" href="#">Music</a>
+        <a class="font-headline tracking-tighter uppercase font-bold text-sm text-[#dce3ea]/60 hover:text-[#dce3ea] transition-all" href="/blog">Blog</a>
+        <a class="font-headline tracking-tighter uppercase font-bold text-sm text-[#dce3ea]/60 hover:text-[#dce3ea] transition-all" href="#">About</a>
+      </div>
+      <button class="material-symbols-outlined text-primary">menu</button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-b from-surface/20 via-surface/60 to-surface z-10"></div>
+        <img
+          class="w-full h-full object-cover opacity-60 mix-blend-luminosity"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7nDp8o9vNac1-ESRBUoRzeMqbs4mVMIldzd1pCZgSoUiiMSA25lX4p9_vttXkUlGvTEX3DU5CZIYw4iD_TtYzu5OlU4hjIcFYNcbhOmpdGP-mL0w30tR0jMdodFW49UyawwJlDjkqgmzRvAPUlvrPEOT9g2I0JDROMEMSLIu7f3hzFRYYGpqzs81ffekH1v0IVeSf9tig9obac_Jxgr8Ml6fxTVxLl3CiwDbQWp4K_uwtLwywuIRCqWeGDmc08hbX3ToCx01ac_zT"
+          alt="atmospheric dark forest"
+        />
+      </div>
+      <div class="relative z-20 max-w-screen-xl px-8 w-full">
+        <div class="grid grid-cols-12 gap-6">
+          <div class="col-span-12 md:col-span-10 lg:col-span-8">
+            <span class="font-label text-primary uppercase tracking-[0.3em] text-xs mb-6 block">The Digital Curator / Portfolio Vol. 04</span>
+            <h1 class="font-headline text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.85] text-on-surface mb-8">
+              ECHO DRIVER: <br/>
+              <span class="text-primary-fixed-dim">SONIC & DIGITAL CRAFT</span>
+            </h1>
+            <p class="font-body text-xl md:text-2xl text-on-surface-variant max-w-xl leading-relaxed mb-12">
+              The intersection of software engineering and experimental music production. Curating atmospheric textures through code and vibration.
+            </p>
+            <div class="flex flex-wrap gap-6">
+              <a class="signature-cta px-8 py-4 text-on-primary font-label font-bold tracking-widest uppercase text-sm hover:scale-[1.02] transition-transform flex items-center gap-3" href="#">
+                VIEW PROJECTS
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </a>
+              <a class="px-8 py-4 border border-outline-variant/30 text-on-surface font-label font-bold tracking-widest uppercase text-sm hover:bg-surface-bright transition-colors" href="#">
+                LISTEN TO TRACKS
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="absolute bottom-12 right-12 hidden lg:block text-right">
+        <div class="font-label text-[10px] tracking-widest uppercase text-outline mb-1">LATITUDE / LONGITUDE</div>
+        <div class="font-label text-sm text-secondary">35.6762° N, 139.6503° E</div>
+      </div>
+    </section>
+
+    <!-- Latest Creations - Bento Grid -->
+    <section class="py-32 px-8 max-w-screen-2xl mx-auto bg-surface-container-low/30">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+        <div>
+          <h2 class="font-label text-tertiary uppercase tracking-widest text-sm mb-4">Archives 01 — 03</h2>
+          <h3 class="font-headline text-4xl md:text-6xl font-black tracking-tighter">LATEST CREATIONS</h3>
+        </div>
+        <div class="font-label text-outline text-xs tracking-tighter text-right">
+          FILTERED BY RECENT ACTIVITY <br/>
+          EST. 2024 ECHO SYSTEM
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[800px]">
+        <!-- Software Project -->
+        <div class="md:col-span-7 group relative overflow-hidden bg-surface-container-high rounded-lg p-1">
+          <div class="absolute inset-0 bg-surface-tint/10 z-10 opacity-40 group-hover:opacity-20 transition-opacity"></div>
+          <img
+            class="w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-700"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkOp9ejtXHwKwp8R_uGvl-T3nXOU3Ju2WaHTb4YKPZw2wmJrYzqPV0hVbysHzgOmZlnMOSDgnOdEyyTKouXOtkm86v7Q7fHKB52OeNuN9c26TdpP-kC9QRaqLDO2_3E9lftTLgFa_UAXsdXkTUXr3nEcnuVDR76-t-2ECl4UljIREEE0fARFBfes0uqVEbtE6gsU8W8RtLgXrg7TYsrvdDJRt7k2bufrySmUvzid_6Jc2wtQblgnkTiYW7srYJKFT0zSWlUU1yn-OH"
+            alt="code on screen"
+          />
+          <div class="absolute bottom-0 left-0 right-0 p-8 z-20 bg-gradient-to-t from-surface-dim to-transparent">
+            <div class="flex justify-between items-end">
+              <div>
+                <span class="font-label text-primary text-[10px] tracking-[0.2em] uppercase mb-2 block">Engineering // Astro.js</span>
+                <h4 class="font-headline text-3xl font-bold tracking-tighter text-on-surface">NEURAL ARCHIVE CMS</h4>
+              </div>
+              <span class="material-symbols-outlined text-4xl text-on-surface/20 group-hover:text-primary transition-colors">north_east</span>
+            </div>
+          </div>
+        </div>
+        <!-- Right column -->
+        <div class="md:col-span-5 grid grid-rows-2 gap-6">
+          <div class="group relative overflow-hidden bg-surface-container-high rounded-lg">
+            <div class="absolute inset-0 bg-surface-tint/10 z-10"></div>
+            <img
+              class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi65uiMmaSMig6fNUi9gwFCISTOkDbmIAlSeqJoiQ4ZWkRvC9Kgl7Kk_tenFgpaCZr_OoGqsA1Wrv7xJKkancUNRefDO_Gsbty6hPBAdXyeytU4_-plabuHYx3w7B2uUsgAtamEv_DCYj0GDJxsJO_SqYRbIAm7zalnVybC0LBN_cwapAFqnSUPrbqpwWGPEZso4uSnmySymWYVpKQf03ksoFC9HZimjGLO0pNifT-vT-3VOOxT_15mYENdczwjoomPK33CDCyCGG8"
+              alt="audio interface"
+            />
+            <div class="absolute top-6 left-6 z-20">
+              <span class="font-label bg-surface-dim/80 backdrop-blur px-3 py-1 text-[10px] text-tertiary tracking-widest uppercase rounded-full">Plugin VST3</span>
+            </div>
+            <div class="absolute bottom-6 left-6 z-20">
+              <h4 class="font-headline text-2xl font-bold tracking-tighter text-on-surface">REVERB MIST V1</h4>
+            </div>
+          </div>
+          <!-- Track Section -->
+          <div class="bg-surface-container-highest rounded-lg p-8 flex flex-col justify-between border-l-2 border-primary/20">
+            <div class="flex justify-between items-start">
+              <div class="w-16 h-16 bg-surface-container flex items-center justify-center rounded-full border border-outline-variant/20">
+                <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+              </div>
+              <span class="font-label text-outline text-[10px] tracking-widest uppercase">04:22 // 128 BPM</span>
+            </div>
+            <div>
+              <h4 class="font-headline text-2xl font-bold tracking-tighter text-on-surface mb-2">SYNTHETIC RAIN</h4>
+              <p class="font-body text-sm text-on-surface-variant leading-relaxed">Experimental ambient track utilizing custom-built granular synthesis oscillators.</p>
+            </div>
+            <div class="h-1 bg-outline-variant/20 w-full relative mt-4">
+              <div class="absolute top-0 left-0 h-full w-1/3 bg-primary"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manifesto Section -->
+    <section class="py-32 bg-surface">
+      <div class="max-w-screen-xl mx-auto px-8">
+        <div class="grid grid-cols-12 gap-12 items-center">
+          <div class="col-span-12 lg:col-span-5">
+            <h2 class="font-headline text-6xl md:text-8xl font-black tracking-tighter leading-[0.8] mb-12 opacity-10 select-none">MANIFESTO</h2>
+            <div class="pl-0 md:pl-12 border-l-0 md:border-l border-outline-variant/20">
+              <p class="font-body text-2xl md:text-3xl font-light text-on-surface leading-tight mb-8 italic">
+                "The most resonant digital experiences are those that acknowledge their own ephemeral nature."
+              </p>
+              <p class="font-body text-lg text-on-surface-variant leading-relaxed max-w-md">
+                I build tools for creators and soundscapes for thinkers. My process is a continuous loop of building, breaking, and refining until the artifact feels like it has always existed.
+              </p>
+            </div>
+          </div>
+          <div class="col-span-12 lg:col-span-7">
+            <div class="aspect-[4/5] bg-surface-container-low overflow-hidden rounded-lg">
+              <img
+                class="w-full h-full object-cover opacity-70 grayscale hover:grayscale-0 transition-all duration-1000"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE_tKZMGrGnbNPiINIJar7UQ-Y3D0i0U4EB635v4pfYUg1qwNeBD3A_tMSKb23YoMi2Nyrq090YeUvZqkujFFku4Kq_9gS3lZcDAt1JsSm6d36UnB0wazfK8t_A4zAUiZYSfzQsAAyX4AL78BiLjoh0RDa8XRqTJ5KlReqEuBwYuRoMAaVm-lLKitK9bLyhUz9lkLH0WPhaDxch86d0fkffd0oviYBjFRboP6F_rpqhzR4A15a2SKwhpfxlRcfFuCh8eaVji3hsD1n"
+                alt="green lights motion"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full pt-32 pb-12 bg-surface-container-lowest relative overflow-hidden">
+    <div class="flex flex-col items-center gap-12 px-8 w-full">
+      <div class="text-[12rem] md:text-[20rem] font-black text-[#dce3ea] opacity-[0.03] select-none leading-none absolute pointer-events-none -mt-40 font-headline">
+        ECHO
+      </div>
+      <div class="flex flex-wrap justify-center gap-12 md:gap-24 relative z-10">
+        <a class="font-label text-[10px] tracking-widest uppercase text-[#dce3ea]/40 hover:text-[#c2dc99] transition-colors duration-500" href="#">Instagram</a>
+        <a class="font-label text-[10px] tracking-widest uppercase text-[#dce3ea]/40 hover:text-[#c2dc99] transition-colors duration-500" href="#">Twitter</a>
+        <a class="font-label text-[10px] tracking-widest uppercase text-[#dce3ea]/40 hover:text-[#c2dc99] transition-colors duration-500" href="#">Soundcloud</a>
+        <a class="font-label text-[10px] tracking-widest uppercase text-[#dce3ea]/40 hover:text-[#c2dc99] transition-colors duration-500" href="#">Github</a>
+        <a class="font-label text-[10px] tracking-widest uppercase text-[#dce3ea]/40 hover:text-[#c2dc99] transition-colors duration-500" href="#">Contact</a>
+      </div>
+      <div class="mt-20 flex flex-col items-center gap-4">
+        <div class="font-headline text-2xl font-black text-on-surface opacity-30">ECHO DRIVER</div>
+        <div class="font-label text-[10px] tracking-widest uppercase text-[#dce3ea]/40">
+          © 2024 ECHO DRIVER. ALL RIGHTS RESERVED.
+        </div>
+      </div>
+    </div>
+  </footer>
+</Layout>

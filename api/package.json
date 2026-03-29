@@ -1,0 +1,17 @@
+{
+  "name": "echo-driver",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy --minify",
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings"
+  },
+  "dependencies": {
+    "@notionhq/client": "^5.15.0",
+    "hono": "^4.12.9",
+    "notion-to-md": "^3.1.9"
+  },
+  "devDependencies": {
+    "wrangler": "^4.4.0"
+  }
+}

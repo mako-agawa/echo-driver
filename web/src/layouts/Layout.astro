@@ -1,0 +1,23 @@
+---
+import '../styles/global.css'
+
+interface Props {
+  title?: string
+}
+
+const { title = 'Echo Driver | Sonic & Digital Craft' } = Astro.props
+---
+
+<!doctype html>
+<html class="dark" lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-surface text-on-surface font-body selection:bg-primary/30">
+    <slot />
+  </body>
+</html>

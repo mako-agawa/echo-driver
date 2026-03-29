@@ -1,0 +1,75 @@
+---
+import Layout from '../../layouts/Layout.astro'
+
+export async function getStaticPaths() {
+  const res = await fetch('https://echo-driver.mako-agawa.workers.dev/api/posts')
+  const posts = await res.json()
+  return posts.map((post: any) => ({
+    params: { slug: post.slug },
+  }))
+}
+
+const { slug } = Astro.params
+const res = await fetch(`https://echo-driver.mako-agawa.workers.dev/api/posts/${slug}`)
+const post = await res.json()
+---
+
+<Layout title={`${post.title} | Echo Driver`}>
+  <nav class="fixed top-0 w-full z-50 glass-nav shadow-[0_40px_40px_rgba(4,7,10,0.06)]">
+    <div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
+      <a class="text-2xl font-black tracking-tighter text-[#dce3ea] hover:text-[#c2dc99] transition-colors font-headline" href="/">
+        Echo Driver
+      </a>
+      <div class="hidden md:flex gap-10 items-center">
+        <a class="font-headline tracking-tighter uppercase font-bold text-sm text-[#dce3ea]/60 hover:text-[#dce3ea] transition-all" href="#">Projects</a>
+        <a class="font-headline tracking-tighter uppercase font-bold text-sm text-[#dce3ea]/60 hover:text-[#dce3ea] transition-all" href="#">Plugins</a>
+        <a class="font-headline tracking-tighter uppercase font-bold text-sm text-[#dce3ea]/60 hover:text-[#dce3ea] transition-all" href="#">Music</a>
+        <a class="font-headline tracking-tighter uppercase font-bold text-sm text-[#dce3ea]/60 hover:text-[#dce3ea] transition-all" href="/blog">Blog</a>
+        <a class="font-headline tracking-tighter uppercase font-bold text-sm text-[#dce3ea]/60 hover:text-[#dce3ea] transition-all" href="#">About</a>
+      </div>
+      <button class="material-symbols-outlined text-primary">menu</button>
+    </div>
+  </nav>
+
+  <main class="pt-52 pb-32 max-w-screen-2xl mx-auto px-8">
+    <div class="max-w-3xl mx-auto">
+      <a href="/blog" class="font-label text-[10px] tracking-widest uppercase text-outline hover:text-primary transition-colors flex items-center gap-2 mb-16">
+        <span class="material-symbols-outlined text-sm">arrow_back</span>
+        BACK TO BLOG
+      </a>
+
+      <div class="mb-12">
+        <div class="flex gap-3 flex-wrap mb-6">
+          {post.tags.map((tag: string) => (
+            <span class="font-label text-[10px] tracking-widest uppercase text-tertiary border border-tertiary/20 px-2 py-0.5">
+              {tag}
+            </span>
+          ))}
+        </div>
+        <h1 class="font-headline text-4xl md:text-6xl font-black tracking-tighter text-on-surface mb-6">
+          {post.title}
+        </h1>
+        <span class="font-label text-outline text-xs tracking-widest">{post.date}</span>
+      </div>
+
+      <div class="border-t border-outline-variant/20 pt-12">
+        <article class="font-body text-on-surface-variant leading-relaxed prose-custom">
+          {post.content.split('\n\n').map((para: string) => {
+            if (para.startsWith('# ')) return <h1 class="font-headline text-3xl font-black tracking-tighter text-on-surface mt-12 mb-4">{para.slice(2)}</h1>
+            if (para.startsWith('## ')) return <h2 class="font-headline text-2xl font-bold tracking-tighter text-on-surface mt-10 mb-4">{para.slice(3)}</h2>
+            if (para.startsWith('### ')) return <h3 class="font-headline text-xl font-bold tracking-tighter text-on-surface mt-8 mb-3">{para.slice(4)}</h3>
+            if (para.startsWith('> ')) return <blockquote class="border-l-2 border-primary/40 pl-6 italic text-on-surface-variant my-6">{para.slice(2)}</blockquote>
+            if (para.startsWith('```')) {
+              const lines = para.split('\n')
+              const code = lines.slice(1, -1).join('\n')
+              return <pre class="bg-surface-container-high rounded-lg p-6 overflow-x-auto my-6 font-mono text-sm text-primary">{code}</pre>
+            }
+            if (para.trim() === '---') return <hr class="border-outline-variant/20 my-8" />
+            if (para.trim() === '') return null
+            return <p class="mb-6 text-lg leading-relaxed">{para}</p>
+          })}
+        </article>
+      </div>
+    </div>
+  </main>
+</Layout>
